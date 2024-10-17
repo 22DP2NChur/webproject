@@ -4,71 +4,58 @@ toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
-// JavaScript modālajam logam
-const modal = document.getElementById("modal");
-const btn = document.querySelector(".card button"); // Poga "Uzzināt vairāk"
-const span1 = document.getElementsByClassName("close")[0];
-const span2 = document.getElementsByClassName('close')[1];
-console.log(document.getElementsByClassName('close'));
-
-
-
-
-// btn.onclick = function() {
-//     modal.style.display = "block";
-// }
-
-// span1.onclick = function() {
-//     modal.style.display = "none";
-// }
-
-// span2.onclick = function() {
-//     modal.style.display = "none";
-// }
-
-// window.onclick = function(event) {
-//     if (event.target === modal) {
-//         modal.style.display = "none";
-//     }
-// }
-
+// Pagaidām uzgaidām, līdz lapa ir pilnībā ielādēta
 document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("modal");
-    const btn = document.querySelector(".card button"); // Poga "Uzzināt vairāk" par frizētavu
+    // Correct modal IDs
+    const modalFrizetava = document.getElementById("modalFrizetava");
+    const modalManikirs = document.getElementById("modalManikirs");
+    const modalKosmetologija = document.getElementById("modalKosmetologija");
+
+    const buttons = document.querySelectorAll(".card button"); // Get all "Uzzināt vairāk" buttons
+
+    // Check if buttons are found
+    if (buttons.length < 3) {
+        console.error("Nepietiekamu pogu skaits.");
+        return;
+    }
+
     const closeFrizetava = document.getElementById("closeFrizetava");
-
-    const manicureModal = document.getElementById("manicureModal");
-    const manicureBtn = document.querySelectorAll(".card")[1].querySelector("button"); // Poga "Uzzināt vairāk" par manikīru
     const closeManikirs = document.getElementById("closeManikirs");
+    const closeKosmetoloģija = document.getElementById("closeKosmetoloģija");
 
-    // Atver modālo logu par frizētavu
-    btn.onclick = function() {
-        modal.style.display = "block";
+    // Open modals
+    buttons[0].onclick = function() {
+        modalFrizetava.style.display = "block";
     }
 
-    // Aizver modālo logu par frizētavu
     closeFrizetava.onclick = function() {
-        modal.style.display = "none";
+        modalFrizetava.style.display = "none";
     }
 
-    // Atver modālo logu par manikīru
-    manicureBtn.onclick = function() {
-        manicureModal.style.display = "block";
+    buttons[1].onclick = function() {
+        modalManikirs.style.display = "block";
     }
 
-    // Aizver modālo logu par manikīru
     closeManikirs.onclick = function() {
-        manicureModal.style.display = "none";
+        modalManikirs.style.display = "none";
     }
 
-    // Aizver modālos logus, ja noklikšķini ārpus tiem
+    buttons[2].onclick = function() {
+        modalKosmetologija.style.display = "block";
+    }
+
+    closeKosmetoloģija.onclick = function() {
+        modalKosmetologija.style.display = "none";
+    }
+
+    // Close modals when clicking outside
     window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        } else if (event.target === manicureModal) {
-            manicureModal.style.display = "none";
+        if (event.target === modalFrizetava) {
+            modalFrizetava.style.display = "none";
+        } else if (event.target === modalManikirs) {
+            modalManikirs.style.display = "none";
+        } else if (event.target === modalKosmetologija) {
+            modalKosmetologija.style.display = "none";
         }
     }
-    });
-    
-
+});
