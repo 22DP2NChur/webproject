@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
+    background: linear-gradient(to left, #dcdcdc 0%, #ffffff 50%, #dcdcdc 100%);
 }
 
 h1, h2 {
@@ -25,35 +26,44 @@ header {
     margin: 0;
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    gap: 20px;
+}
+
 .navbar ul {
     list-style: none;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 0;
     padding: 0;
 }
 
 .navbar li {
-    margin-left: 20px;
+    margin-right: 25px;
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar a:hover {
     background-color: white;
     color: #f2c1c6;
-    padding: 5px 10px;
-    border-radius: 5px;
 }
 
 #darkModeToggle {
     background-color: white;
     color: #f2c1c6;
     border-radius: 20px;
-    margin-left: 400px;
     padding: 8px 12px;
     cursor: pointer;
     border: none;
@@ -63,6 +73,50 @@ header {
 #darkModeToggle:hover {
     background-color: #333;
     color: white;
+}
+
+/* Sider navigācija */
+.hamburger {
+    display: none; /* Hidden on large screens */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Hide the menu by default */
+        flex-direction: column; /* Stack the links vertically */
+        gap: 10px;
+        background-color: #333;
+        background-color: rgba(51, 51, 51, 0.7);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .navbar ul.show {
+        display: flex; /* Show the menu when toggled */
+    }
+
+    .hamburger {
+        display: flex; /* Show the hamburger icon on small screens */
+    }
+
+    .navbar li {
+        margin-right: 0; /* Remove margin on mobile */
+        text-align: center; /* Center the links */
+    }
 }
 
 /* Galvenā sadaļa */
@@ -130,10 +184,11 @@ main {
 aside {
     padding: 20px;
     background-color: #f5f5f5;
+    background: linear-gradient(to left, #dcdcdc 0%, #ffffff 50%, #dcdcdc 100%);
 }
 
 aside h2 {
-    color: #f2c1c6;
+    color: #333;
 }
 
 aside ul {
@@ -187,6 +242,7 @@ footer .social-icons a:hover {
 /* Dark Mode */
 body.dark-mode {
     background-color: #333;
+    background: linear-gradient(to left, #292828 0%, #333 50%, #292828 100%);
     color: #f5f5f5;
 }
 
@@ -216,12 +272,16 @@ body.dark-mode .modal-content {
 body.dark-mode .aside {
     background-color: #333;
     color: white;
+    background: linear-gradient(to left, #292828 0%, #333 50%, #292828 100%);
 }
 
 body.dark-mode .aside ul li a{
     color: white;
 }
 
+body.dark-mode .aside h2 {
+    color: white;
+}
 
 body.dark-mode footer {
     background-color: #444;

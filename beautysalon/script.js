@@ -4,6 +4,18 @@ toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
+// Ensure the DOM is fully loaded before running the script
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the hamburger and the menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+  
+    // Add a click event listener to toggle the "show" class
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+  });
+  
 // Pagaidām uzgaidām, līdz lapa ir pilnībā ielādēta
 document.addEventListener("DOMContentLoaded", () => {
     // Correct modal IDs
