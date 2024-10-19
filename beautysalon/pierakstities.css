@@ -7,9 +7,12 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #f2c1c6;
-    padding: 20px;
-    text-align: center;
+    padding: 10px 20px;
+    color: white;
 }
 
 footer {
@@ -17,14 +20,21 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-icons a:hover {
+    color: #f2c1c6;
 }
 
 /* Form Styles */
 form {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 20px;
     max-width: 400px;
     margin: 20px auto;
