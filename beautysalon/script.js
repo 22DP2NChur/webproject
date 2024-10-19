@@ -70,4 +70,28 @@ document.addEventListener("DOMContentLoaded", () => {
             modalKosmetologija.style.display = "none";
         }
     }
+
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();  // Prevent default form submission
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const procedure = document.getElementById('procedure').value;
+        const date = document.getElementById('date').value;
+
+        console.log('User Info:', { name, email, procedure, date });
+
+        // You can use AJAX or fetch to submit data to your server
+        // Example:
+        /*
+        fetch('/submit', {
+            method: 'POST',
+            body: JSON.stringify({ name, email, procedure, date }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        */
+    });
 });
+
