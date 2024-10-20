@@ -1,7 +1,23 @@
-// Dark mode pārslēgšana
-const toggleButton = document.getElementById('darkModeToggle');
-toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+
+// Dark Mode parslēgšana
+const darkModeToggle = document.getElementById("darkModeToggle");
+const body = document.body;
+
+// Check for saved dark mode preference
+if (localStorage.getItem("darkMode") === "enabled") {
+    body.classList.add("dark-mode"); // Enable dark mode if saved
+}
+
+// Toggle Dark Mode on button click
+darkModeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    // Save the preference in localStorage
+    if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+    } else {
+        localStorage.setItem("darkMode", "disabled");
+    }
 });
 
 // Ensure the DOM is fully loaded before running the script
@@ -72,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.querySelector('form').addEventListener('submit', function(e) {
-        e.preventDefault();  // Prevent default form submission
+        e.preventDefault();  
         
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
@@ -80,18 +96,40 @@ document.addEventListener("DOMContentLoaded", () => {
         const date = document.getElementById('date').value;
 
         console.log('User Info:', { name, email, procedure, date });
-
-        // You can use AJAX or fetch to submit data to your server
-        // Example:
-        /*
-        fetch('/submit', {
-            method: 'POST',
-            body: JSON.stringify({ name, email, procedure, date }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        */
     });
 });
+
+ // Get form elements
+ const form = document.getElementById("registrationForm");
+ const successModal = document.getElementById("successModal");
+ const closeModal = document.getElementById("closeModal");
+ 
+ // Function to display the modal
+ function showModal() {
+     successModal.style.display = "block";
+ }
+ 
+ // Close modal when "x" is clicked
+ closeModal.addEventListener("click", () => {
+     successModal.style.display = "none";
+ });
+ 
+ // Close modal when clicking outside the modal content
+ window.onclick = function(event) {
+     if (event.target === successModal) {
+         successModal.style.display = "none";
+     }
+ }
+ 
+ // Form submission event listener
+ form.addEventListener("submit", function(event) {
+     event.preventDefault(); // Prevent the default form submission
+ 
+     // Check if all fields are valid
+     if (form.checkValidity()) {
+         showModal(); // Show the modal if the form is valid
+     } else {
+         alert("Lūdzu, aizpildiet visus laukus!");
+     }
+ });
 

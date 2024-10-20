@@ -1,41 +1,83 @@
-<!-- pieraksties.html -->
 <!DOCTYPE html>
 <html lang="lv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pierakstieties uz procedūru</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <title>Pierakstīties uz procedūru</title>
+    <link rel="stylesheet" href="pierakstities.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head> 
 <body>
+    <!-- Galvene -->
     <header>
-        <h1>Pierakstieties uz procedūru</h1>
+        <div class="logo">
+            <h1>The Glam Bar</h1>
+        </div>
+        <!-- Navigācijas izvēlne -->
+        <nav class="navbar">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
+                <li><a href="index.html">Sākums</a></li>
+                <li><a href="#">Par Mums</a></li>
+                <li><a href="#">Kontakti</a></li>
+            </ul>
+            <button id="darkModeToggle">Dark Mode</button>
+        </nav>
     </header>
 
+    <!-- Galvenā sadaļa -->
     <main>
-        <form action="/submit" method="POST">
-            <label for="name">Vārds:</label>
+        <h1>Pierakstīties uz procedūru</h1>
+        <p>Lūdzu, aizpildiet zemāk esošo formu, lai pierakstītos uz izvēlēto procedūru.</p>
+
+        <!-- Pierakstīšanās forma -->
+        <form action="#" method="post" class="registration-form" id="registrationForm">
+            <label for="name">Vārds un uzvārds:</label>
             <input type="text" id="name" name="name" required>
 
             <label for="email">E-pasts:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="procedure">Izvēlieties procedūru:</label>
-            <select id="procedure" name="procedure" required>
-                <option value="frizetava">Frizetava</option>
-                <option value="manikirs">Manikīrs</option>
-                <option value="kosmetologija">Kosmetoloģija</option>
-            </select>
+            <label for="phone">Tālruņa numurs:</label>
+            <input type="tel" id="phone" name="phone" required>
 
             <label for="date">Izvēlieties datumu:</label>
             <input type="date" id="date" name="date" required>
+
+            <label for="procedure">Izvēlieties procedūru:</label>
+            <select id="procedure" name="procedure">
+                <option value="frizetava">Frizētava</option>
+                <option value="manikirs">Manikīrs</option>
+                <option value="kosmetologija">Kosmetoloģija</option>
+            </select>
 
             <button type="submit">Pierakstīties</button>
         </form>
     </main>
 
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Pieraksts ir veiksmīgs!</h2>
+            <p>Jūs esat veiksmīgi pierakstījies uz procedūru. Mēs sazināsimies ar jums tuvākajā laikā.</p>
+        </div>
+    </div>
+    
+    <!-- Kājene -->
     <footer>
-        <p>Nikola Čurilova © 2024 The Glam Bar<p>
+        <p>Nikola Čurilova © 2024 The Glam Bar</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
