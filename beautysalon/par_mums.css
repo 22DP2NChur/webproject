@@ -1,18 +1,12 @@
-/* Pamatstils */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+    background-color: #f9f9f9;
     color: #333;
     background: linear-gradient(to left, #dcdcdc 0%, #ffffff 50%, #dcdcdc 100%);
+    margin: 0;
+    padding: 0;
 }
 
-h1, h2 {
-    color: #f2c1c6;
-}
-
-/* Galvene */
 header {
     display: flex;
     justify-content: space-between;
@@ -74,55 +68,12 @@ header {
     background-color: #333;
     color: white;
 }
-
-/* Sider navigācija */
-.hamburger {
-    display: none; /* Hidden on large screens */
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: 0.4s;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .navbar ul {
-        display: none; /* Hide the menu by default */
-        flex-direction: column; /* Stack the links vertically */
-        gap: 10px;
-        background-color: #333;
-        background-color: rgba(51, 51, 51, 0.7);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .navbar ul.show {
-        display: flex; /* Show the menu when toggled */
-    }
-
-    .hamburger {
-        display: flex; /* Show the hamburger icon on small screens */
-    }
-
-    .navbar li {
-        margin-right: 0; /* Remove margin on mobile */
-        text-align: center; /* Center the links */
-    }
-}
-
-/* Galvenā sadaļa */
 main {
-    text-align: center;
     padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    
 }
 
 .main-image {
@@ -130,6 +81,21 @@ main {
     max-width: 600px;
     margin: 20px 0;
     border-radius: 10px;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #f2c1c6;
+    text-align: center;
+}
+
+h2 {
+    color: #f2c1c6;
+}
+
+ul {
+    padding-left: 20px;
 }
 
 /* Kartiņas */
@@ -149,6 +115,8 @@ main {
     width: 30%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    font-size:smaller;
+    line-height: normal; 
 }
 
 .card img {
@@ -160,49 +128,28 @@ main {
     color: #f2c1c6;
 }
 
-.card button {
-    background-color: #f2c1c6;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.card button:hover {
-    background-color: #333;
-    color: white;  
-}
-
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Sānu josla */
-aside {
-    padding: 20px;
-    background-color: #f5f5f5;
-    background: linear-gradient(to left, #dcdcdc 0%, #ffffff 50%, #dcdcdc 100%);
+.location {
+    text-align: center; 
+    margin-top: 30px; 
 }
 
-aside h2 {
-    color: #333;
+.map {
+    display: inline-block; 
+    margin-top: 20px;
 }
 
-aside ul {
-    list-style: none;
-    padding: 0;
-}
-
-aside li {
-    margin: 10px 0;
-}
-
-aside a {
-    text-decoration: none;
-    color: #333;
+iframe {
+    width: 100%;
+    max-width: 600px; 
+    height: 450px;
+    width: 1000px;
+    border: none; 
+    margin-bottom: 30px;
 }
 
 /* Kājene */
@@ -223,23 +170,6 @@ footer .social-icons a:hover {
     color: #f2c1c6;
 }
 
-/* Responsivitāte */
-@media (max-width: 768px) {
-    .cards {
-        flex-direction: column;
-    }
-
-    .card {
-        width: 90%;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* Dark Mode */
 
 body.dark-mode #darkModeToggle {
     background-color: #f2c1c6;
@@ -302,57 +232,3 @@ body.dark-mode .aside h2 {
 body.dark-mode footer {
     background-color: #444;
 }
-
-/* Modālais logs */
-.modal {
-    display: none; /* Slēgts pa noklusējumu */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    border-radius: 10px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #f2c1c6;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-content button {
-    background-color: #f2c1c6;
-    border-radius: 20px;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.modal-content button:hover {
-    background-color: #333;
-    color: white;  
-}
-

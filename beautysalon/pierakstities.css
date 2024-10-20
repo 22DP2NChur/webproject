@@ -239,6 +239,22 @@ footer .social-icons a:hover {
 }
 
 /* Dark Mode */
+
+body.dark-mode #darkModeToggle {
+    background-color: #f2c1c6;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode #darkModeToggle:hover {
+    background-color: #333;
+    color: white;
+}
+
 body.dark-mode {
     background-color: #333;
     background: linear-gradient(to left, #292828 0%, #333 50%, #292828 100%);
