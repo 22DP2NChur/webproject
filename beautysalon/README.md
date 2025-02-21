@@ -12,7 +12,6 @@ Skaistumkopšanas salons projekts ir vienkārša, moderni izstrādāta mājaslap
 - **Horizontāla navigācijas izvēlne** augšpusē, veidota ar Flexbox izkārtojumu.
 - **Hover efekti**: uzbraucot ar peli uz navigācijas elementiem, mainās fona un teksta krāsas.
 - **Ikonas** pievienotas izmantojot [FontAwesome](https://fontawesome.com/).
-- **Responsīvs dizains**: izvēlne tiek pielāgota mobilajām ierīcēm.
 - **Dark Mode**: tumšā režīma pārslēgšana ar pogu.
 
 ### 2. Kartiņas (Card)
